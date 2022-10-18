@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Line } from 'react-chartjs-2';
-import { UserData } from '../data/Data';
+import { UserData } from '../../data/Data';
 
 import { Chart as ChartJS } from 'chart.js/auto';
 

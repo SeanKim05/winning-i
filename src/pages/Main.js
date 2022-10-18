@@ -1,31 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
-import BarChart from '../component/BarChart';
-import LineChart from '../component/LineChart';
-import PieChart from '../component/PieChart';
+import BarChart from '../component/charts/BarChart';
+import LineChart from '../component/charts/LineChart';
+import PieChart from '../component/charts/PieChart';
 import SideMenu from '../component/SideMenu';
 
 function Main() {
   return (
     <MainContainer>
-      <SideMenu />
-      <MainWrapper>
-        <h1>Main Page</h1>
-        <ChartContainer>
-          <div className="chart_wrapper">
-            <BarChart />
-          </div>
-          <div className="chart_wrapper">
-            <LineChart />
-          </div>
-          <div className="chart_wrapper">
-            <PieChart />
-          </div>
-        </ChartContainer>
-        <ChartContainer>
-          <div className="content_wrapper"></div>
-        </ChartContainer>
-      </MainWrapper>
+      <div className="main_container_width">
+        <SideMenu />
+        <MainWrapper>
+          <h1>Main Page</h1>
+          <ChartContainer>
+            <div className="chart_wrapper">
+              <BarChart />
+            </div>
+            <div className="chart_wrapper">
+              <LineChart />
+            </div>
+            <div className="chart_wrapper">
+              <PieChart />
+            </div>
+          </ChartContainer>
+          <ChartContainer>
+            <div className="content_wrapper"></div>
+          </ChartContainer>
+        </MainWrapper>
+      </div>
     </MainContainer>
   );
 }
@@ -33,11 +35,18 @@ function Main() {
 export default Main;
 
 const MainContainer = styled.div`
-  margin-left: 10rem;
+  .main_container_width {
+    margin-left: 10rem;
+  }
+  @media screen and (max-width: 768px) {
+    .main_container_width {
+      margin-left: 4rem;
+    }
+  }
 `;
 const MainWrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100rem;
   display: flex;
   flex-direction: column;
 
@@ -68,7 +77,7 @@ const ChartContainer = styled.div`
 
   .content_wrapper {
     width: 100%;
-    height: 25rem;
+    height: 20rem;
     display: flex;
     align-items: center;
     justify-content: flex-start;

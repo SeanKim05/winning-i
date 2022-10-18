@@ -9,13 +9,20 @@ import {
   IoMdMenu,
   IoMdClose,
   IoMdPerson,
+  IoMdHome,
 } from 'react-icons/io';
 
 function SideMenu() {
   const [active, setActive] = useState(false);
   const navigate = useNavigate();
-  const go_board = () => {
-    navigate('/board');
+  const go_detail = () => {
+    navigate('/detail');
+  };
+  const go_list = () => {
+    navigate('/list');
+  };
+  const go_home = () => {
+    navigate('/');
   };
 
   const activateNav = () => {
@@ -34,17 +41,18 @@ function SideMenu() {
         <nav>
           <ul className={active ? 'ul-item' : 'ul-item oicon'}>
             <li>
+              <IoMdHome className="icon" onClick={go_home} />
+              <Link to="/"> Home</Link>
+            </li>
+            <li>
               <IoMdPerson className="icon" />
               <Link to="/"> My info</Link>
             </li>
             <li>
-              <IoMdImages className="icon" />
-              <Link to="/">List</Link>
+              <IoMdClipboard className="icon" onClick={go_list} />
+              <Link to="/detail">List</Link>
             </li>
-            <li>
-              <IoMdClipboard className="icon" onClick={go_board} />
-              <Link to="/board"> Board</Link>
-            </li>
+
             <li>
               <IoMdPower className="icon" />
               <Link to="/">Logout</Link>
@@ -126,7 +134,7 @@ const SideMenuWrapper = styled.div`
       font-size: 30px;
     }
   }
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     .header-mobile {
       inset: 0 90% 0 0;
       justify-content: center;
