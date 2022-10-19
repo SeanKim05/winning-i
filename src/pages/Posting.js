@@ -1,53 +1,37 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import React from 'react';
 import SideMenu from '../component/SideMenu';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import styled from 'styled-components';
 
-export const ListDetail = () => {
-  const [posts, setPosts] = useState();
-  const [loading, setLoading] = useState(false);
-  const params = useParams();
-  const id = params.id;
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      setLoading(true);
-      const res = await axios.get(
-        `https://jsonplaceholder.typicode.com/posts/${id}`,
-      );
-      setPosts(res.data.body);
-      setLoading(false);
-    };
-    fetchPosts();
-  }, []);
-
+function Posting() {
   return (
-    <ListContainer>
+    <MainContainer>
       <div className="main_container_width">
         <SideMenu />
         <ListWrapper>
-          <h1>Detail</h1>
+          <h1>게시글 작성</h1>
           <ListDetailContainer>
-            <div className="content_wrapper">{posts}</div>
+            <div className="content_wrapper">
+              <textarea placeholder="게시글 입력" />
+            </div>
           </ListDetailContainer>
           <div className="detail_button">
-            <button className="btn btn-default">Delete</button>
-            <button className="btn btn-default">Modify</button>
+            <button className="btn btn-default">완료</button>
           </div>
         </ListWrapper>
       </div>
-    </ListContainer>
+    </MainContainer>
   );
-};
+}
 
-const ListContainer = styled.div`
+const MainContainer = styled.div`
   .main_container_width {
-    margin-left: 10rem;
+    margin-left: 12rem;
+    margin-right: 7rem;
   }
   @media screen and (max-width: 768px) {
     .main_container_width {
-      margin-left: 4rem;
+      margin-left: 6rem;
+      margin-right: 0rem;
     }
   }
 `;
@@ -72,12 +56,12 @@ const ListWrapper = styled.div`
       margin-right: 0.5rem;
       color: rgb(13, 110, 253);
       background-color: white;
-      height: 5rem;
-      width: 10rem;
+      height: 3rem;
+      width: 5rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
   }
 `;
@@ -99,5 +83,15 @@ const ListDetailContainer = styled.div`
     align-items: flex-start;
     justify-content: center;
     font-size: 25px;
+    textarea {
+      padding: 1rem;
+      font-size: 15px;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      border: none;
+    }
   }
 `;
+
+export default Posting;

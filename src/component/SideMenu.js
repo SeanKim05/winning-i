@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import {
-  IoMdImages,
   IoMdClipboard,
   IoMdPower,
   IoMdMenu,
@@ -15,14 +14,14 @@ import {
 function SideMenu() {
   const [active, setActive] = useState(false);
   const navigate = useNavigate();
-  const go_detail = () => {
-    navigate('/detail');
+  const go_login = () => {
+    navigate('/');
   };
   const go_list = () => {
     navigate('/list');
   };
   const go_home = () => {
-    navigate('/');
+    navigate('/main');
   };
 
   const activateNav = () => {
@@ -41,21 +40,22 @@ function SideMenu() {
         <nav>
           <ul className={active ? 'ul-item' : 'ul-item oicon'}>
             <li>
+              <IoMdPerson className="icon user-name" />
+              <Link to="/"> User</Link>
+            </li>
+            <li>
               <IoMdHome className="icon" onClick={go_home} />
-              <Link to="/"> Home</Link>
-            </li>
-            <li>
-              <IoMdPerson className="icon" />
-              <Link to="/"> My info</Link>
-            </li>
-            <li>
-              <IoMdClipboard className="icon" onClick={go_list} />
-              <Link to="/detail">List</Link>
+              <Link to="/"> 홈</Link>
             </li>
 
             <li>
-              <IoMdPower className="icon" />
-              <Link to="/">Logout</Link>
+              <IoMdClipboard className="icon" onClick={go_list} />
+              <Link to="/detail">게시글 목록</Link>
+            </li>
+
+            <li>
+              <IoMdPower onClick={go_login} className="icon" />
+              <Link to="/">로그아웃</Link>
             </li>
           </ul>
         </nav>
@@ -71,10 +71,14 @@ const SideMenuWrapper = styled.div`
     display: flex;
     position: fixed;
     flex-direction: column;
-    /* padding-top: 5%; */
     color: white;
-    inset: 0 88% 0 0;
+    inset: 0 87% 0 0;
     background-color: rgb(0, 0, 0, 0.2);
+    font-size: 0.7rem;
+    li:hover {
+      background-color: rgb(0, 0, 0, 0.7);
+      transition: 1s ease;
+    }
   }
   .header-mobile {
     display: flex;
@@ -91,18 +95,17 @@ const SideMenuWrapper = styled.div`
       flex-direction: column;
       list-style: none;
       li {
+        width: 100%;
         display: flex;
         align-items: center;
         cursor: pointer;
         padding-block: 1.5rem;
         .icon {
-          margin-inline: 1.2rem;
-          font-size: 30px;
+          margin-inline: 1rem;
+          font-size: 1rem;
         }
       }
-      li:hover {
-        background-color: rgb(0, 0, 0, 0.7);
-      }
+
       li a {
         text-transform: uppercase;
         text-decoration: none;
@@ -110,14 +113,10 @@ const SideMenuWrapper = styled.div`
         border-left: 1px solid white;
         padding-left: 0.5rem;
       }
-      li:hover {
-        transition: 1s ease;
-      }
     }
     .ul-item.oicon a {
       display: none;
       li::after {
-        content: '';
         position: absolute;
         width: 1%;
         height: 4%;
@@ -136,18 +135,22 @@ const SideMenuWrapper = styled.div`
   }
   @media (max-width: 768px) {
     .header-mobile {
-      inset: 0 90% 0 0;
+      inset: 0 95% 0 0;
       justify-content: center;
     }
     nav {
       .ul-item {
         display: none;
+        li .icon {
+          font-size: 1rem;
+          margin-inline: 1rem;
+        }
       }
       .ul-item.oicon {
         display: flex;
       }
-      li .icon {
-        font-size: clamp(1rem, 2vw + 1rem, 4rem);
+      li {
+        padding-block: 0.1rem;
       }
     }
     .menu_icon {

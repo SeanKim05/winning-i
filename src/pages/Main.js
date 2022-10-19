@@ -11,7 +11,7 @@ function Main() {
       <div className="main_container_width">
         <SideMenu />
         <MainWrapper>
-          <h1>Main Page</h1>
+          <h1>메인 페이지</h1>
           <ChartContainer>
             <div className="chart_wrapper">
               <BarChart />
@@ -24,7 +24,9 @@ function Main() {
             </div>
           </ChartContainer>
           <ChartContainer>
-            <div className="content_wrapper"></div>
+            <div className="content_wrapper">
+              <img src="https://images.unsplash.com/photo-1604931668626-ab49cb27d952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" />
+            </div>
           </ChartContainer>
         </MainWrapper>
       </div>
@@ -37,16 +39,17 @@ export default Main;
 const MainContainer = styled.div`
   .main_container_width {
     margin-left: 10rem;
+    height: 100vh;
   }
   @media screen and (max-width: 768px) {
     .main_container_width {
       margin-left: 4rem;
+      height: 100vh;
     }
   }
 `;
 const MainWrapper = styled.div`
   width: 100%;
-  height: 100rem;
   display: flex;
   flex-direction: column;
 
@@ -66,6 +69,7 @@ const ChartContainer = styled.div`
   justify-content: space-evenly;
   flex-wrap: wrap;
   margin: 20px;
+  padding: 13px;
 
   .chart_wrapper {
     width: 16rem;
@@ -81,5 +85,13 @@ const ChartContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-start;
+  }
+
+  .content_wrapper {
+    img {
+      padding: 30px;
+      height: 100%;
+      width: 100%;
+    }
   }
 `;
