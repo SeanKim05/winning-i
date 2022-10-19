@@ -9,7 +9,7 @@ function BarChart() {
     labels: UserData.map(data => data.year),
     datasets: [
       {
-        label: 'Post Created',
+        label: '게시물 수',
         data: UserData.map(data => data.postingListed),
         backgroundColor: [
           'rgba(75,192,192,1)',

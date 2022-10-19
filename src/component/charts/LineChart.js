@@ -9,7 +9,7 @@ function LineChart() {
     labels: UserData.map(data => data.year),
     datasets: [
       {
-        label: 'Users Visited',
+        label: '방문자 수',
         data: UserData.map(data => data.userVisited),
         backgroundColor: 'red',
         borderColor: 'red',
