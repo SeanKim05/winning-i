@@ -64,7 +64,7 @@ const MainContainer = styled.div`
   }
   @media screen and (max-width: 768px) {
     .main_container_width {
-      margin-left: 6rem;
+      margin-left: 3rem;
       margin-right: 0rem;
     }
   }
@@ -84,7 +84,7 @@ const MainWrapper = styled.div`
 
   h1 {
     color: white;
-    font-size: 30px;
+    font-size: 1.5rem;
     margin: 2rem;
   }
   .bottom_buttons {
@@ -97,6 +97,7 @@ const MainWrapper = styled.div`
       height: 1.7rem;
       display: flex;
       align-items: center;
+      font-size: 0.7rem;
     }
   }
 `;
