@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/winning-i/static/css/main.76031048.css",
-    "main.js": "/winning-i/static/js/main.b0f24cca.js",
+    "main.js": "/winning-i/static/js/main.b0f9aae0.js",
     "index.html": "/winning-i/index.html",
     "main.76031048.css.map": "/winning-i/static/css/main.76031048.css.map",
-    "main.b0f24cca.js.map": "/winning-i/static/js/main.b0f24cca.js.map"
+    "main.b0f9aae0.js.map": "/winning-i/static/js/main.b0f9aae0.js.map"
   },
   "entrypoints": [
     "static/css/main.76031048.css",
-    "static/js/main.b0f24cca.js"
+    "static/js/main.b0f9aae0.js"
   ]
 }
