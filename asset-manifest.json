@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/playkeyboard-2team/static/css/main.76031048.css",
-    "main.js": "/playkeyboard-2team/static/js/main.61fc5b15.js",
-    "index.html": "/playkeyboard-2team/index.html",
-    "main.76031048.css.map": "/playkeyboard-2team/static/css/main.76031048.css.map",
-    "main.61fc5b15.js.map": "/playkeyboard-2team/static/js/main.61fc5b15.js.map"
+    "main.css": "/winning-i/static/css/main.76031048.css",
+    "main.js": "/winning-i/static/js/main.5329a3b0.js",
+    "index.html": "/winning-i/index.html",
+    "main.76031048.css.map": "/winning-i/static/css/main.76031048.css.map",
+    "main.5329a3b0.js.map": "/winning-i/static/js/main.5329a3b0.js.map"
   },
   "entrypoints": [
     "static/css/main.76031048.css",
-    "static/js/main.61fc5b15.js"
+    "static/js/main.5329a3b0.js"
   ]
 }
