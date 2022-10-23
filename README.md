@@ -27,6 +27,6 @@
   - React.js, Scss, bootstrap, chart.js
 
 ## 3. 배포
-  - 배포주소: https://seankim05.github.io/winning-i/main
+  - 배포주소: https://seankim05.github.io/winning-i/
   - 이메일 형식에 맞는 아이디 + 특수기호 & 대소문자 알파벳 숫자 조합 & 길이 8글자 이상 입력시 로그인이 가능합니다
   - ex) ID: qwe@qwe.com, PW: @QWEqwe123
