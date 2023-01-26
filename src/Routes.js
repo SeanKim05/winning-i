@@ -8,7 +8,7 @@ import Posting from './pages/Posting';
 
 function Router() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={"/"}>
       <Routes>
         <Route path="/main" element={<Main />} />
         <Route path="/list" element={<List />} />
