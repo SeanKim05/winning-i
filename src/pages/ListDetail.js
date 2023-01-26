@@ -6,18 +6,15 @@ import { useParams } from 'react-router-dom';
 
 export const ListDetail = () => {
   const [posts, setPosts] = useState();
-  const [loading, setLoading] = useState(false);
   const params = useParams();
   const id = params.id;
 
   useEffect(() => {
     const fetchPosts = async () => {
-      setLoading(true);
       const res = await axios.get(
         `https://jsonplaceholder.typicode.com/posts/${id}`,
       );
       setPosts(res.data.body);
-      setLoading(false);
     };
     fetchPosts();
   }, []);
@@ -31,10 +28,6 @@ export const ListDetail = () => {
           <ListDetailContainer>
             <div className="content_wrapper">{posts}</div>
           </ListDetailContainer>
-          <div className="detail_button">
-            <button className="btn btn-default">Delete</button>
-            <button className="btn btn-default">Modify</button>
-          </div>
         </ListWrapper>
       </div>
     </ListContainer>

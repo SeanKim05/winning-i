@@ -7,7 +7,6 @@ import {
   IoMdPower,
   IoMdMenu,
   IoMdClose,
-  IoMdPerson,
   IoMdHome,
 } from 'react-icons/io';
 
@@ -40,17 +39,13 @@ function SideMenu() {
         <nav>
           <ul className={active ? 'ul-item' : 'ul-item oicon'}>
             <li>
-              <IoMdPerson className="icon user-name" />
-              <Link to="/"> User</Link>
-            </li>
-            <li>
               <IoMdHome className="icon" onClick={go_home} />
               <Link to="/"> 홈</Link>
             </li>
 
             <li>
               <IoMdClipboard className="icon" onClick={go_list} />
-              <Link to="/detail">게시글 목록</Link>
+              <Link to="/list">게시글 목록</Link>
             </li>
 
             <li>
