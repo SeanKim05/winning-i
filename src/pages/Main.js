@@ -23,11 +23,6 @@ function Main() {
               <PieChart />
             </div>
           </ChartContainer>
-          <ChartContainer>
-            <div className="content_wrapper">
-              <img src="https://images.unsplash.com/photo-1604931668626-ab49cb27d952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" />
-            </div>
-          </ChartContainer>
         </MainWrapper>
       </div>
     </MainContainer>

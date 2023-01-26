@@ -6,20 +6,21 @@ function Login() {
   const pwdRef = useRef('');
   const [pwd, setPwd] = useState('');
   const [validPwd, setValidPwd] = useState(false);
-  useEffect(() => {
-    setValidPwd(PWD_REGEX.test(pwd));
-  }, [pwd]);
 
   const emailRef = useRef('');
   const [email, setEmail] = useState('');
   const [validEmail, setValidEmail] = useState(false);
+
   useEffect(() => {
+    const PWD_REGEX =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,24}$/;
+    setValidPwd(PWD_REGEX.test(pwd));
+  }, [pwd]);
+
+  useEffect(() => {
+    const EMAIL_REGEX = /^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
     setValidEmail(EMAIL_REGEX.test(email));
   }, [email]);
-
-  const EMAIL_REGEX = /^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-  const PWD_REGEX =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,24}$/;
 
   const navigate = useNavigate();
   const goMain = () => {
@@ -102,16 +103,16 @@ const LoginContainer = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 30%;
-    height: 60%;
+    width: 40rem;
+    height: 30rem;
     .loginTitle {
       color: white;
       font-weight: 700;
       text-align: center;
       font-size: 30px;
-      margin-block: 1rem;
     }
     .content_wrapper {
+      width: 100%;
       margin: 20px;
       display: flex;
       flex-direction: column;
