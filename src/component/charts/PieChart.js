@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Pie } from 'react-chartjs-2';
 import { UserAge } from '../../data/UserAge';
-import { Chart as ChartJS } from 'chart.js/auto';
 
 function PieChart() {
   const [userData] = useState({
@@ -20,7 +19,6 @@ function PieChart() {
       },
     ],
   });
-  console.log(userData);
 
   return <Pie data={userData} />;
 }

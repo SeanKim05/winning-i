@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import SideMenu from '../component/SideMenu';
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import axios from 'axios';
 import Posts from '../component/posting/Posts';
@@ -11,10 +10,6 @@ function List() {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(20);
-  const navigate = useNavigate();
-  const go_create_post = () => {
-    navigate('/posting');
-  };
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -46,9 +41,6 @@ function List() {
                 totalPosts={posts.length}
                 paginate={paginate}
               />
-              <button className="btn btn-default" onClick={go_create_post}>
-                게시글 등록
-              </button>
             </section>
           </div>
         </MainWrapper>

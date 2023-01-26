@@ -2,10 +2,8 @@ import { useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import { UserData } from '../../data/Data';
 
-import { Chart as ChartJS } from 'chart.js/auto';
-
 function LineChart() {
-  const [userData, setUserData] = useState({
+  const [userData] = useState({
     labels: UserData.map(data => data.year),
     datasets: [
       {

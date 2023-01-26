@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -9,13 +8,11 @@ function Posts({ posts, loading }) {
   };
   const postId = e => {
     goPost(e.target.id);
-    // console.log(e.target);
   };
 
   if (loading) {
     return <h2>Loading</h2>;
   }
-  console.log(posts);
   return (
     <PostContainer>
       <ul className="list-group mb-4">
