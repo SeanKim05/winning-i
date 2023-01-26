@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# 위닝아이 기업과제
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 1. 구현사항
 
-## Available Scripts
+#### 1-1 로그인 페이지 구현
+  - 로그인 아이디 비밀번호 창에 정규식 적용으로 로그인 조건 달성시 로그인 버튼 활성 (-> 메인페이지 이동)
+  - 아이디 및 비밀번호 형식 체크 메시지 삽입
+  - ! DB에 저장된 아이디 비밀번호 일치 여부 및 토큰 발급 불가능 권한부여 기능 미구현
+  
+#### 1-2 메인 페이지
+  - Mock Data 생성 후 차트에 적용
+  - Chart.js 사용으로 제시된 3개의 차트 (바, 그래프, 파이형)구현
+  - 제시조건에 포함된 이미지 삽입
+  
+#### 1-3 게시글 페이지
+  - axios를 사용하여 외부 사이트에서 제공된 json 데이터 사용
+  - bootstrap으로 게시글 리스트 및 이동영역 구현
+  - 게시글 클릭 시 상세 내용으로 이동 가능
+  - 게시글 등록 버튼 클릭 시 게시글 작성 페이지로 이동 가능
+  - ! 게시글 등록 수정 삭제 미구현
+  
+#### 1-4 슬라이드 바
+  - 슬라이딩 기능 구현 (모바일 사이즈 미지원: 768px 이하)
+  - 버튼 클릭으로 페이지 이동 가능
 
-In the project directory, you can run:
+## 2. 사용기술
+  - React.js, Scss, bootstrap, chart.js
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 3. 배포
+  - 배포주소: https://seankim05.github.io/winning-i/
+  - 이메일 형식에 맞는 아이디 + 특수기호 & 대소문자 알파벳 숫자 조합 & 길이 8글자 이상 입력시 로그인이 가능합니다
+  - ex) ID: qwe@qwe.com, PW: @QWEqwe123
