@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-function Posts({ posts, loading }) {
+function Posts(props) {
+  const posts = props.posts;
   const navigate = useNavigate();
   const goPost = id => {
     navigate(`/detail/${id}`);
@@ -10,9 +11,6 @@ function Posts({ posts, loading }) {
     goPost(e.target.id);
   };
 
-  if (loading) {
-    return <h2>Loading</h2>;
-  }
   return (
     <PostContainer>
       <ul className="list-group mb-4">
@@ -25,7 +23,7 @@ function Posts({ posts, loading }) {
               postId(e);
             }}
           >
-            <div> {post.id}</div>
+            <div>{post.id}</div>
             {post.title}
           </li>
         ))}

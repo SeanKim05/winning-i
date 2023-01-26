@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import { UserData } from '../../data/Data';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
 
 function LineChart() {
   const [userData] = useState({

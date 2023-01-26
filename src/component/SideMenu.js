@@ -40,7 +40,7 @@ function SideMenu() {
           <ul className={active ? 'ul-item' : 'ul-item oicon'}>
             <li>
               <IoMdHome className="icon" onClick={go_home} />
-              <Link to="/"> 홈</Link>
+              <Link to="/main"> 홈</Link>
             </li>
 
             <li>

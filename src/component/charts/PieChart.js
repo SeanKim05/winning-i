@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Pie } from 'react-chartjs-2';
 import { UserAge } from '../../data/UserAge';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
 
 function PieChart() {
   const [userData] = useState({

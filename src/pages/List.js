@@ -7,16 +7,13 @@ import { Pagination } from '../component/posting/Pagination';
 
 function List() {
   const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(20);
 
   useEffect(() => {
     const fetchPosts = async () => {
-      setLoading(true);
       const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
       setPosts(res.data);
-      setLoading(false);
     };
     fetchPosts();
   }, []);
@@ -24,8 +21,9 @@ function List() {
   const indexOfLastPosts = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPosts - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPosts);
-
   const paginate = pagNumber => setCurrentPage(pagNumber);
+
+  console.log(indexOfFirstPost, indexOfLastPosts, currentPage);
 
   return (
     <MainContainer>
@@ -34,7 +32,7 @@ function List() {
         <MainWrapper>
           <div className="container mt-5">
             <h1 className="test_primary mb-3">게시글 목록</h1>
-            <Posts posts={currentPosts} laoding={loading} />
+            <Posts posts={currentPosts} />
             <section className="bottom_buttons">
               <Pagination
                 postsPerPage={postsPerPage}

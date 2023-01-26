@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import SideMenu from '../component/SideMenu';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 export const ListDetail = () => {
   const [posts, setPosts] = useState();
+  const [title, setTitle] = useState();
   const params = useParams();
   const id = params.id;
 
@@ -14,20 +15,27 @@ export const ListDetail = () => {
       const res = await axios.get(
         `https://jsonplaceholder.typicode.com/posts/${id}`,
       );
-      setPosts(res.data.body);
+      const result = res.data;
+      setPosts(result.body);
+      setTitle(result.title);
     };
     fetchPosts();
-  }, []);
+  }, [id]);
 
   return (
     <ListContainer>
       <div className="main_container_width">
         <SideMenu />
         <ListWrapper>
-          <h1>Detail</h1>
+          <h1>{title}</h1>
           <ListDetailContainer>
             <div className="content_wrapper">{posts}</div>
           </ListDetailContainer>
+          <div className="detail_button">
+            <button className="btn btn-default">
+              <Link to="/list">뒤로가기</Link>
+            </button>
+          </div>
         </ListWrapper>
       </div>
     </ListContainer>
@@ -65,8 +73,8 @@ const ListWrapper = styled.div`
       margin-right: 0.5rem;
       color: rgb(13, 110, 253);
       background-color: white;
-      height: 5rem;
-      width: 10rem;
+      height: 3rem;
+      width: 8rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -82,7 +90,9 @@ const ListDetailContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   margin: 20px;
+  font-size: 35px;
 
   .content_wrapper {
     width: 100%;
@@ -91,6 +101,6 @@ const ListDetailContainer = styled.div`
     padding: 50px;
     align-items: flex-start;
     justify-content: center;
-    font-size: 25px;
+    font-size: 35px;
   }
 `;
