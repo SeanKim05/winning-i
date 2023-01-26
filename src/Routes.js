@@ -8,11 +8,11 @@ import Posting from './pages/Posting';
 
 function Router() {
   return (
-    <BrowserRouter basename={"/"}>
+    <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Login />} />
         <Route path="/main" element={<Main />} />
         <Route path="/list" element={<List />} />
-        <Route path="/" element={<Login />} />
         <Route path="/posting" element={<Posting />} />
         <Route path="/detail/:id" element={<ListDetail />} />
       </Routes>
