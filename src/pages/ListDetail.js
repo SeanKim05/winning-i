@@ -33,7 +33,7 @@ export const ListDetail = () => {
           </ListDetailContainer>
           <div className="detail_button">
             <button className="btn btn-default">
-              <Link to="/list">뒤로가기</Link>
+              <Link to="/list">리스트 이동</Link>
             </button>
           </div>
         </ListWrapper>
@@ -74,7 +74,7 @@ const ListWrapper = styled.div`
       color: rgb(13, 110, 253);
       background-color: white;
       height: 3rem;
-      width: 8rem;
+      width: 10rem;
       display: flex;
       align-items: center;
       justify-content: center;
