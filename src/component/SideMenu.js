@@ -38,18 +38,18 @@ function SideMenu() {
         </div>
         <nav>
           <ul className={active ? 'ul-item' : 'ul-item oicon'}>
-            <li>
-              <IoMdHome className="icon" onClick={go_home} />
+            <li onClick={go_home}>
+              <IoMdHome className="icon" />
               <Link to="/main"> 홈</Link>
             </li>
 
-            <li>
-              <IoMdClipboard className="icon" onClick={go_list} />
+            <li onClick={go_list}>
+              <IoMdClipboard className="icon" />
               <Link to="/list">게시글 목록</Link>
             </li>
 
-            <li>
-              <IoMdPower onClick={go_login} className="icon" />
+            <li onClick={go_login}>
+              <IoMdPower className="icon" />
               <Link to="/">로그아웃</Link>
             </li>
           </ul>

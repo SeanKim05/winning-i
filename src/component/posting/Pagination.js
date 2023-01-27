@@ -13,7 +13,6 @@ export const Pagination = props => {
           <li key={number} className="page-item">
             <button
               onClick={() => props.paginate(number)}
-              href="#"
               className="page-link"
             >
               {number}
